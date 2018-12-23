@@ -12,12 +12,24 @@ var yourGuessesLeft = document.getElementById("guessesLeft");
 var guessSoFar = document.getElementById("guessSoFar");
 
 
+console.log(computerGuess)
+console.log(yourWin)
+console.log(yourLose)
+console.log(wins)
+console.log(loses)
 
 function results() {
     yourWin.textContent = wins;
     yourLose.textContent = loses;
     yourGuessesLeft.textContent = guessesLeft;
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]
   }
+
+
+function generateLetter() {
+
+    console.log (computerGuess)
+}
 
 document.onkeyup = function(event) {
 var userGuess = event.key;
@@ -36,26 +48,29 @@ if (userGuess == computerGuess) {
 else {
     guessesLeft--;
 
-if (guessesLeft=0) {
+
+
+}
+
+    
+if (guessesLeft == 0) {
 loses++;
 guessesLeft = 10;
 userGuessSoFar = [];
 computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+results();
+generateLetter();
 
-}
 
 }
 results();
+generateLetter();
+
 }
 results();
+generateLetter();
 
 
-
-console.log(computerGuess)
-console.log(yourWin)
-console.log(yourLose)
-console.log(wins)
-console.log(loses)
 
 /* Psychic Game Pseudocode
 
